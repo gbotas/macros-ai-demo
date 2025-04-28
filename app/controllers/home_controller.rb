@@ -45,9 +45,9 @@ def process_inputs
     }' 
   @structured_output = c.assistant! 
 
-  @g_carbs = result.fetch("carbohydrates")
-  @g_protein = result.fetch("protein")
-  @kcal = result.fetch("calories")
+  @g_carbs = @structured_output.fetch("carbohydrates")
+  @g_protein = @structured_output.fetch("protein")
+  @kcal = @structured_output.fetch("calories")
   
   render({:template => "home_templates/results"})
 end 
