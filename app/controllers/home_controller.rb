@@ -8,7 +8,7 @@ end
 
 def process_inputs
 
-  @the_image = params.fetch("image_param", "")
+  @the_image = params.fetch("image_param", nil)
 
   @the_description = params.fetch("description_param", "")
 
@@ -44,6 +44,10 @@ def process_inputs
       "strict": true
     }' 
   @structured_output = c.assistant! 
+
+  @g_carbs = result.fetch("carbohydrates")
+  @g_protein = result.fetch("protein")
+  @kcal = result.fetch("calories")
   
   render({:template => "home_templates/results"})
 end 
