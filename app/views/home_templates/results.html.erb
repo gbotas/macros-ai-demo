@@ -1,8 +1,23 @@
-<h1> Hello, it's me again! </h1>
 
-<div>
-Image: <%= @the_image %>
-Descrption: <%= @the_description %>
+<%= @structured_output %>
 
-</div>
+<h1> Results </h1>
 
+<dl>
+  <dt>Carbs (g)</dt>
+  <dd><%= @g_carbs %></dd>
+
+  <dt>Protein (g)</dt>
+  <dd><%= @g_protein %></dd>
+
+  <dt>Fat (g)</dt>
+  <dd><%= @g_fat %></dd>
+
+  <dt>Total calories (kcal) </dt>
+  <dd><%= @kcal %></dd>
+
+  <dt>Notes</dt>
+  <dd><%= simple_format(@notes) %></dd>
+</dl>
+
+<p><a href="/blank_form">Estimate another</a></p>
